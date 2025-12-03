@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dead by Daylight — DLC Collection</title>
+
+<style>
+  :root{
+    --bg:#0a0a1a;
+    --accent1:#7d39ff;
+    --accent2:#4ea3ff;
+    --card:#101028;
+    --text:#e9e9ff;
+    --radius:14px;
+  }
+
+  body{
+    margin:0;
+    background: radial-gradient(1000px 600px at 10% 20%, rgba(125,57,255,0.15), transparent),
+                radial-gradient(1200px 700px at 90% 90%, rgba(78,163,255,0.15), transparent),
+                var(--bg);
+    font-family: Inter, system-ui, sans-serif;
+    color:var(--text);
+  }
+
+  /* -------- HEADER (без квадрата, текст по центру) -------- */
+  .header{
+    padding:20px 30px;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    background:linear-gradient(90deg, rgba(255,255,255,0.03), transparent);
+    position:sticky;
+    top:0;
+    text-align:center;
+  }
+
+  .header h1{
+    margin:0;
+    font-size:24px;
+    font-weight:700;
+  }
+
+  .header .subtext{
+    opacity:.55;
+    font-size:14px;
+    margin-top:4px;
+  }
+
+  /* GRID & CARDS */
+  .wrap{
+    max-width:1200px;
+    margin:30px auto;
+    padding:0 16px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+    gap:20px;
+  }
+
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.22));
+    border-radius:var(--radius);
+    border:1px solid rgba(255,255,255,0.06);
+    overflow:hidden;
+    min-height:320px;
+    box-shadow:0 10px 35px rgba(0,0,60,0.6);
+    transition:transform .3s ease, box-shadow .3s ease;
+    cursor:pointer;
+    position:relative;
+  }
+
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 25px 60px rgba(0,0,90,0.8);
+  }
+
+  .card::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:7px;
+    top:0;
+    left:0;
+    background:linear-gradient(90deg, var(--accent1), var(--accent2));
+  }
+
+  .thumb{ padding:18px; }
+
+  .imgwrap{
+    width:100%;
+    height:220px;
+    border-radius:12px;
+    overflow:hidden;
+    background:linear-gradient(180deg, rgba(125,57,255,0.05), rgba(0,0,0,0.25));
+    border:1px solid rgba(255,255,255,0.06);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .imgwrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    animation: floatY 7s ease-in-out infinite;
+    transition:transform .3s;
+  }
+
+  .card:hover .imgwrap img{
+    transform:scale(1.07);
+  }
+
+  .meta{
+    padding:14px 16px;
+    border-top:1px solid rgba(255,255,255,0.04);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .title{ font-size:16px; font-weight:700; }
+  .sub{ font-size:13px; opacity:0.7; }
+
+  .badge{
+    padding:6px 10px;
+    border-radius:999px;
+    background:linear-gradient(180deg, rgba(125,57,255,0.15), rgba(78,163,255,0.10));
+    border:1px solid rgba(125,57,255,0.3);
+    font-size:13px;
+    color:#dcdcff;
+    font-weight:600;
+  }
+
+  @keyframes floatY{
+    0%   { transform:translateY(0px) scale(1.01); }
+    50%  { transform:translateY(-14px) scale(1.03); }
+    100% { transform:translateY(0px) scale(1.01); }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <h1>Dead by Daylight — DLC Collection</h1>
+    <div class="subtext">Animated gallery of killer DLC</div>
+</header>
+
+<main class="wrap">
+  <section class="grid">
+
+    <!-- Huntress -->
+    <article class="card">
+      <div class="thumb"><div class="imgwrap"><img src="imageshuntress.jpg"></div></div>
+      <div class="meta"><div><div class="title">The Huntress</div><div class="sub">A Lullaby for the Dark</div></div><div class="badge">DLC</div></div>
+    </article>
+
+    <!-- Ghost Face -->
+    <article class="card">
+      <div class="thumb"><div class="imgwrap"><img src="imagesghostface.jpg"></div></div>
+      <div class="meta"><div><div class="title">Ghost Face</div><div class="sub">The Ghost Face Chapter</div></div><div class="badge">DLC</div></div>
+    </article>
+
+    <!-- Chucky -->
+    <article class="card">
+<div class="thumb"><div class="imgwrap"><img src="imageschucky.jpg"></div></div>
+      <div class="meta"><div><div class="title">Chucky</div><div class="sub">Child’s Play</div></div><div class="badge">DLC</div></div>
+    </article>
+
+    <!-- Alien -->
+    <article class="card">
+      <div class="thumb"><div class="imgwrap"><img src="imagesalien.jpg"></div></div>
+      <div class="meta"><div><div class="title">Xenomorph</div><div class="sub">Alien Chapter</div></div><div class="badge">DLC</div></div>
+    </article>
+
+    <!-- Pyramid Head -->
+    <article class="card">
+      <div class="thumb"><div class="imgwrap"><img src="imagespyramidhead.png"></div></div>
+      <div class="meta"><div><div class="title">Pyramid Head</div><div class="sub">Silent Hill</div></div><div class="badge">DLC</div></div>
+    </article>
+
+    <!-- Oni -->
+    <article class="card">
+      <div class="thumb"><div class="imgwrap"><img src="imagesoni.jpg"></div></div>
+      <div class="meta"><div><div class="title">The Oni</div><div class="sub">Cursed Legacy</div></div><div class="badge">DLC</div></div>
+    </article>
+
+  </section>
+</main>
+
+</body>
+</html>	 
